@@ -1,10 +1,12 @@
 <template>
   <div class="home">
     <search :onSearch="search"></search>
-    <p>{{filterRecommendationApps.length}}</p>
-    <recommendation-list :apps="filterRecommendationApps"></recommendation-list>
-    <p>{{filterFreeApps.length}}</p>
-    <free-list :apps="filterFreeApps"></free-list>
+    <div class="app-list container">
+      <p>count: {{filterRecommendationApps.length}}</p>
+      <recommendation-list :apps="filterRecommendationApps"></recommendation-list>
+      <p>count: {{filterFreeApps.length}}</p>
+      <free-list :apps="filterFreeApps"></free-list>
+    </div>
   </div>
 </template>
 

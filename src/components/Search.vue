@@ -1,7 +1,8 @@
 <template>
   <div class="search">
-    <b-form-input v-model="keyword" type="text" placeholder="Search"></b-form-input>
-    <b-button variant="success" @click="search()">Press</b-button>
+    <div class="mx-4 my-3">
+      <b-form-input v-model="keyword" type="search" @input="search()" :placeholder="'\uf002 搜尋'"></b-form-input>
+    </div>
   </div>
 </template>
 
