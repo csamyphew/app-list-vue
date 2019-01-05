@@ -1,22 +1,41 @@
 <template>
   <div class="home">
-    <Hello></Hello>
-    <p>{{entryCount}}</p>
+    <search :onSearch="search"></search>
+    <p>{{filterRecommendationApps.length}}</p>
+    <recommendation-list :apps="filterRecommendationApps"></recommendation-list>
+    <p>{{filterFreeApps.length}}</p>
+    <free-list :apps="filterFreeApps"></free-list>
   </div>
 </template>
 
 <script>
-import Hello from '@/components/Hello.vue'
+import Search from '@/components/Search.vue'
+import FreeList from '@/components/FreeList.vue'
+import RecommendationList from '@/components/RecommendationList.vue'
 export default {
   name: 'Home',
-  components: {Hello},
+  components: {Search, FreeList, RecommendationList},
+  data () {
+    return {
+      keyword: null
+    }
+  },
   computed: {
-    entryCount () {
-      return this.$store.getters.entryCount(3)
+    filterFreeApps () {
+      return this.$store.getters.filterFreeApps(this.keyword)
+    },
+    filterRecommendationApps () {
+      return this.$store.getters.filterRecommendationApps(this.keyword)
     }
   },
   created () {
     this.$store.dispatch('getTopFreeApps')
+    this.$store.dispatch('getTopGrossingApps')
+  },
+  methods: {
+    search (keyword) {
+      this.keyword = keyword
+    }
   }
 }
 </script>
