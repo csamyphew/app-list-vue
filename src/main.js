@@ -8,10 +8,19 @@ import router from './router'
 import BootstrapVue from 'bootstrap-vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import Slick from 'vue-slick'
+import AOS from 'aos'
+
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+import '../node_modules/slick-carousel/slick/slick.css'
+import '../node_modules/slick-carousel/slick/slick-theme.css'
+import 'aos/dist/aos.css'
 
 Vue.use(BootstrapVue)
 axios.defaults.baseURL = process.env.API_URL
 Vue.use(VueAxios, axios)
+Vue.use(Slick)
 
 // Styles
 require('./styles/app.scss')
@@ -23,6 +32,9 @@ new Vue({
   el: '#app',
   router,
   store,
+  created () {
+    AOS.init()
+  },
   template: '<App/>',
   components: { App }
 })

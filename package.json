@@ -11,14 +11,18 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
+    "aos": "^3.0.0-beta.6",
     "axios": "^0.18.0",
     "bootstrap-vue": "^2.0.0-rc.11",
     "es6-promise": "^4.2.5",
     "i": "^0.3.6",
+    "jquery": "^3.3.1",
     "lodash": "^4.17.11",
     "vue": "^2.5.2",
     "vue-axios": "^2.1.4",
     "vue-router": "^3.0.1",
+    "vue-slick": "^1.1.15",
+    "vue-spinner": "^1.0.3",
     "vuex": "^3.0.1"
   },
   "devDependencies": {

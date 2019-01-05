@@ -1,12 +1,41 @@
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
 @import url("//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
 //variables
-$primary-color: #4a4a4a;
+$primary-color: #2f2f2f;
+$category-color: #6f6f6f;
 $input-bg-color: #eeeeee;
+
+//mixin
+@mixin multiLineEllipsis($lineHeight: 1.2rem, $lineCount: 1, $bgColor: white){
+  overflow: hidden;
+  position: relative;
+  line-height: $lineHeight;
+  max-height: $lineHeight * $lineCount; 
+  text-align: justify;
+  margin-right: -1rem;
+  padding-right: 1rem;
+  &:before {
+    content: '...';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 1rem;
+    height: 1rem;
+    margin-top: 0.2rem;
+    background: $bgColor;
+  }
+}
 
 //styles
 body {
   margin: 0;
+  overflow-x: hidden;
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -15,15 +44,15 @@ body {
   color: $primary-color;
 }
 
+//Search Bar
 .search{
   position: fixed;
   width: 100%;
   top: 0;
   background-color: #fafafa;
-  border-bottom: 1px solid $input-bg-color;
+  z-index: 99;
   input{
     background-color: $input-bg-color;
-    color: #cccccc;
     text-align: center;
     font-family: 'Helvetica', FontAwesome, sans-serif;
     &:focus{
@@ -32,6 +61,46 @@ body {
     }
   }
 }
+
+//App List
 .app-list{
   margin-top: 80px;
+  .recommendation-list{
+    h4{
+      font-size: 1.8rem;
+      color: black;
+    }
+    .app-item{
+      max-width: 130px;
+      padding: 0 15px;
+      &:first-child{
+        padding-left: 0;
+      }
+      @include media-breakpoint-down(md){
+        max-width: 120px;
+        padding: 0 10px;
+      }
+      .icon{
+        border-radius: 20px;
+      }
+      p{
+        font-size: 0.9rem;
+        @include media-breakpoint-down(md){
+          font-size: 0.8rem;
+        }
+      }
+      .name{
+        @include multiLineEllipsis($lineHeight: 1.2rem, $lineCount: 2, $bgColor: white); 
+        @include media-breakpoint-down(md){
+          @include multiLineEllipsis($lineHeight: 1.1rem, $lineCount: 2, $bgColor: white); 
+        }
+      }
+      .category{
+        color: $category-color;
+      }
+    }
+  }
+  .free-list{
+
+  }
 }

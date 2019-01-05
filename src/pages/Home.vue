@@ -1,10 +1,12 @@
 <template>
   <div class="home">
     <search :onSearch="search"></search>
-    <div class="app-list container">
-      <p>count: {{filterRecommendationApps.length}}</p>
+    <hr/>
+    <div class="app-list">
+      <!-- <p>count: {{filterRecommendationApps.length}}</p> -->
       <recommendation-list :apps="filterRecommendationApps"></recommendation-list>
-      <p>count: {{filterFreeApps.length}}</p>
+      <hr/>
+      <!-- <p>count: {{filterFreeApps.length}}</p> -->
       <free-list :apps="filterFreeApps"></free-list>
     </div>
   </div>
@@ -31,8 +33,8 @@ export default {
     }
   },
   created () {
-    this.$store.dispatch('getTopFreeApps')
     this.$store.dispatch('getTopGrossingApps')
+    this.$store.dispatch('getTopFreeApps')
   },
   methods: {
     search (keyword) {
