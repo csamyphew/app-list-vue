@@ -1,7 +1,7 @@
 <template>
   <div class="search">
     <div class="mx-4 my-3">
-      <b-form-input v-model="keyword" type="search" @input="search()" :placeholder="'\uf002 搜尋'"></b-form-input>
+      <b-form-input v-model="keyword" type="search" @input="search()" :placeholder="'   \uf002 搜尋'"></b-form-input>
     </div>
   </div>
 </template>
