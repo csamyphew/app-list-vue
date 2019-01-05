@@ -6,3 +6,10 @@ export const getTopFreeApps = ({commit}) => {
     commit('setTopFreeList', apps)
   })
 }
+
+export const getTopGrossingApps = ({commit}) => {
+  commit('clearTopGrossingList')
+  api.getTopGrossingApps((apps) => {
+    commit('setTopGrossingList', apps)
+  })
+}
