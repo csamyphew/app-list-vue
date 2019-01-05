@@ -2,6 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import 'es6-promise/auto'
 import Vue from 'vue'
+import store from './store'
 import App from './App'
 import router from './router'
 import BootstrapVue from 'bootstrap-vue'

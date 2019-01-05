@@ -28,6 +28,9 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js PWA'
     }
-  }
+  },
+  methods: mapActions([
+    'getTopFreeApps'
+  ])
 }
 </script>

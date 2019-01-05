@@ -9,6 +9,14 @@
 import Hello from '@/components/Hello.vue'
 export default {
   name: 'Home',
-  components: {Hello}
+  components: {Hello},
+  computed: {
+    entryCount () {
+      return this.$store.getters.entryCount(3)
+    }
+  },
+  created () {
+    this.$store.dispatch('getTopFreeApps')
+  }
 }
 </script>
