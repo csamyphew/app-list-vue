@@ -3,12 +3,13 @@
     <h4 class="mb-3">推介</h4>
     <slick class="col-12 brand-slider px-0" v-if="apps.length>0" ref="slick" :options="slickOptions">
       <div class="app-item" v-for="(item,index) in apps" :key="'recomm-'+index" :id="'recomm-'+index"
-           data-aos="fade-up" :data-aos-delay="200*index" data-aos-duration="700" :data-aos-anchor="'#recomm-'+index+1" data-aos-anchor-placement="top-center">
+           data-aos="fade-up" :data-aos-delay="100*index" data-aos-duration="500" :data-aos-anchor="'#recomm-'+index+1" data-aos-anchor-placement="top-center">
         <img class="icon mb-2" :src="item.icon" />
         <p class="name mb-0">{{item.name}}</p>
         <p class="category">{{item.category}}</p>
       </div>
     </slick>
+    <p v-else-if="keyword">沒有符合搜尋條件的結果</p>
     <clip-loader color="#4a4a4a" size="24px" v-else></clip-loader>
   </div>
 </template>
@@ -19,7 +20,7 @@ import ClipLoader from 'vue-spinner/src/ClipLoader.vue'
 export default {
   name: 'RecommendationList',
   components: {Slick, ClipLoader},
-  props: ['apps'],
+  props: ['apps', 'keyword'],
   data () {
     return {
       slickOptions: {
@@ -67,6 +68,16 @@ export default {
           }
         ]
       }
+    }
+  },
+  beforeUpdate () {
+    if (this.$refs.slick) {
+      this.$refs.slick.destroy()
+    }
+  },
+  updated () {
+    if (this.$refs.slick && !this.$refs.slick.$el.classList.contains('slick-initialized')) {
+      this.$refs.slick.create()
     }
   }
 }

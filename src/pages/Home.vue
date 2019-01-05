@@ -4,10 +4,10 @@
     <hr/>
     <div class="app-list">
       <!-- <p>count: {{filterRecommendationApps.length}}</p> -->
-      <recommendation-list :apps="filterRecommendationApps"></recommendation-list>
+      <recommendation-list :apps="filterRecommendationApps" :keyword="keyword"></recommendation-list>
       <hr/>
       <!-- <p>count: {{filterFreeApps.length}}</p> -->
-      <free-list :apps="filterFreeApps"></free-list>
+      <!-- <free-list :apps="filterFreeApps"></free-list> -->
     </div>
   </div>
 </template>

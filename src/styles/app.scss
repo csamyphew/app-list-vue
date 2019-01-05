@@ -70,6 +70,9 @@ body {
       font-size: 1.8rem;
       color: black;
     }
+    .slick-track{
+      margin-left: 0;
+    }
     .app-item{
       max-width: 130px;
       padding: 0 15px;
@@ -88,16 +91,17 @@ body {
         @include media-breakpoint-down(md){
           font-size: 0.8rem;
         }
-      }
-      .name{
-        @include multiLineEllipsis($lineHeight: 1.2rem, $lineCount: 2, $bgColor: white); 
-        @include media-breakpoint-down(md){
-          @include multiLineEllipsis($lineHeight: 1.1rem, $lineCount: 2, $bgColor: white); 
+        &.name{
+          @include multiLineEllipsis($lineHeight: 1.2rem, $lineCount: 2, $bgColor: white); 
+          @include media-breakpoint-down(md){
+            @include multiLineEllipsis($lineHeight: 1.1rem, $lineCount: 2, $bgColor: white); 
+          }
+        }
+        &.category{
+          color: $category-color;
         }
       }
-      .category{
-        color: $category-color;
-      }
+     
     }
   }
   .free-list{
