@@ -1,5 +1,6 @@
 <template>
   <div class="free-list container">
+    <h4 class="mb-3">免費</h4>
     <div class="row" v-if="apps.length>0" >
       <div class="app-item col-12 col-md-6 col-lg-4 my-2" v-for="(item,index) in list" :key="'free-'+index" :id="'free-'+index"
            data-aos="fade-left" :data-aos-delay="50*(index%10)" data-aos-duration="500" data-aos-once="true" 

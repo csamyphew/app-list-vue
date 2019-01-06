@@ -66,11 +66,11 @@ body {
 //App List
 .app-list{
   margin-top: 80px;
+  h4{
+    font-size: 1.8rem;
+    color: black;
+  }
   .recommendation-list{
-    h4{
-      font-size: 1.8rem;
-      color: black;
-    }
     .slick-track{
       margin-left: 0;
     }
