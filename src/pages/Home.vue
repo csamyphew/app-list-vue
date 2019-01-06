@@ -6,7 +6,7 @@
       <recommendation-list :apps="filterRecommendationApps" :keyword="keyword"></recommendation-list>
       <hr/>
       <!-- <p>count: {{filterFreeApps.length}}</p> -->
-      <!-- <free-list :apps="filterFreeApps"></free-list> -->
+      <free-list :apps="filterFreeApps" :keyword="keyword"></free-list>
     </div>
   </div>
 </template>
