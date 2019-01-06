@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <search :onSearch="search"></search>
-    <hr/>
     <div class="app-list">
       <!-- <p>count: {{filterRecommendationApps.length}}</p> -->
       <recommendation-list :apps="filterRecommendationApps" :keyword="keyword"></recommendation-list>

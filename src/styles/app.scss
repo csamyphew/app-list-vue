@@ -51,6 +51,7 @@ body {
   top: 0;
   background-color: #fafafa;
   z-index: 99;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   input{
     background-color: $input-bg-color;
     text-align: center;
