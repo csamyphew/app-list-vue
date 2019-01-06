@@ -19,6 +19,7 @@
       </div>
       <infinite-loading @infinite="infiniteHandler" spinner="spiral" :identifier="infiniteId">
         <div slot="no-more"></div>
+        <div slot="no-results"></div>
       </infinite-loading>
     </div>
     <p v-else-if="keyword">沒有符合搜尋條件的結果</p>
@@ -44,10 +45,7 @@ export default {
       this.list = newVal.slice(0,10)
       this.page = 1
       this.infiniteId += 1;
-    },
-    keyword: function(){
-      this.page = 1
-      this.$scrollTo('.home',{offset: -80})
+      // this.$scrollTo('.home',{offset: -80})
     }
   },
   methods: {
