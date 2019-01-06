@@ -10,6 +10,8 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import Slick from 'vue-slick'
 import AOS from 'aos'
+import InfiniteLoading from 'vue-infinite-loading'
+import VueScrollTo from 'vue-scrollto'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -21,6 +23,8 @@ Vue.use(BootstrapVue)
 axios.defaults.baseURL = process.env.API_URL
 Vue.use(VueAxios, axios)
 Vue.use(Slick)
+Vue.use(InfiniteLoading)
+Vue.use(VueScrollTo)
 
 // Styles
 require('./styles/app.scss')
