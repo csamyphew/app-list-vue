@@ -106,6 +106,36 @@ body {
     }
   }
   .free-list{
+    .v-select{
+      width: 160px;
+      &.open{
+        .dropdown-toggle .vs__selected-options{
+          align-items: center;
+          .selected-tag{
+            margin-top:0;
+          }
+        }
+      }
+      .dropdown-toggle{
+        .vs__selected-options{
+          span.selected-tag{
+            padding-left: 15px;
+          }
+          input{
+            padding-left: 18px;
+          }
+        }
+        &:focus{
+          outline:0;
+        }
+        &::after{
+          display: none;
+        }
+      }
+      .dropdown-menu{
+        width: calc(100% - 15px);
+      }
+    }
     .app-item{
       &:nth-child(odd){
         .icon{
