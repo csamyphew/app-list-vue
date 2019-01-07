@@ -11,3 +11,9 @@ export function getTopGrossingApps (cb) {
     cb(response.data.feed.entry)
   })
 }
+
+export function getAppDetail (id, cb) {
+  Vue.axios.get('/lookup?id='+id).then((response) => {
+    cb(response.data.results[0])
+  })
+}

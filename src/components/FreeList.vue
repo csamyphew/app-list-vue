@@ -12,10 +12,10 @@
         <div class="row align-items-center">
           <p class="rank col-2 p-4 px-sm-0 mb-0">{{item.rank}}</p>
           <div class="col-3 pl-0 px-md-0">
-            <img class="icon" :src="item.icon" />
+            <img class="icon" :src="item.icon" @click="openDetail(item.id)"/>
           </div>
           <div class="col-7 row">
-            <p class="name col-12 mb-1">{{item.name}}</p>
+            <p class="name col-12 mb-1" @click="openDetail(item.id)">{{item.name}}</p>
             <p class="category col-12 mb-1">{{item.category}}</p>
             <p class="author col-12 mb-0">{{item.author}}</p>
           </div>
@@ -29,16 +29,18 @@
     </div>
     <p v-else-if="keyword">沒有符合搜尋條件的結果</p>
     <clip-loader color="#4a4a4a" size="24px" v-else></clip-loader>
+    <app-detail />
   </div>
 </template>
 
 <script>
 import ClipLoader from 'vue-spinner/src/ClipLoader.vue'
 import vSelect from 'vue-select'
+import AppDetail from '@/components/AppDetail.vue'
 export default {
   name: 'FreeList',
   props: ['apps', 'keyword'],
-  components: {ClipLoader,vSelect},
+  components: {ClipLoader, vSelect, AppDetail},
   data () {
     return {
       page: 1,
@@ -83,6 +85,10 @@ export default {
       }else{
         $state.complete()
       }
+    },
+    openDetail(id){
+      this.$store.dispatch('getAppDetail',id)
+      this.$modal.show('detail')
     }
   }
 }

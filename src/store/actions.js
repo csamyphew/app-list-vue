@@ -13,3 +13,10 @@ export const getTopGrossingApps = ({commit}) => {
     commit('setTopGrossingList', apps)
   })
 }
+
+export const getAppDetail = ({commit},id) => {
+  commit('clearAppDetail')
+  api.getAppDetail(id,(app) => {
+    commit('setAppDetail', app)
+  })
+}

@@ -12,6 +12,7 @@ import Slick from 'vue-slick'
 import AOS from 'aos'
 import InfiniteLoading from 'vue-infinite-loading'
 import VueScrollTo from 'vue-scrollto'
+import VModal from 'vue-js-modal'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -25,6 +26,7 @@ Vue.use(VueAxios, axios)
 Vue.use(Slick)
 Vue.use(InfiniteLoading)
 Vue.use(VueScrollTo)
+Vue.use(VModal)
 
 // Styles
 require('./styles/app.scss')

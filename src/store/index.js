@@ -9,7 +9,8 @@ Vue.use(Vuex)
 
 const state = {
   apps: [],
-  recommendations: []
+  recommendations: [],
+  app: {}
 }
 
 const debug = process.env.NODE_ENV !== 'production'

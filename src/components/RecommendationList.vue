@@ -4,22 +4,24 @@
     <slick class="col-12 brand-slider px-0" v-if="apps.length>0" ref="slick" :options="slickOptions">
       <div class="app-item" v-for="(item,index) in apps" :key="'recomm-'+index" :id="'recomm-'+index"
            data-aos="fade-up" :data-aos-delay="100*index" data-aos-duration="500" :data-aos-anchor="'#recomm-'+index+1" data-aos-anchor-placement="top-center">
-        <img class="icon mb-2" :src="item.icon" />
-        <p class="name mb-0">{{item.name}}</p>
+        <img class="icon mb-2" :src="item.icon" @click="openDetail(item.id)"/>
+        <p class="name mb-0" @click="openDetail(item.id)">{{item.name}}</p>
         <p class="category">{{item.category}}</p>
       </div>
     </slick>
     <p v-else-if="keyword">沒有符合搜尋條件的結果</p>
     <clip-loader color="#4a4a4a" size="24px" v-else></clip-loader>
+    <app-detail />
   </div>
 </template>
 
 <script>
 import Slick from 'vue-slick'
 import ClipLoader from 'vue-spinner/src/ClipLoader.vue'
+import AppDetail from '@/components/AppDetail.vue'
 export default {
   name: 'RecommendationList',
-  components: {Slick, ClipLoader},
+  components: {Slick, ClipLoader, AppDetail},
   props: ['apps', 'keyword'],
   data () {
     return {
@@ -78,6 +80,12 @@ export default {
   updated () {
     if (this.$refs.slick && !this.$refs.slick.$el.classList.contains('slick-initialized')) {
       this.$refs.slick.create()
+    }
+  },
+  methods:{
+    openDetail(id){
+      this.$store.dispatch('getAppDetail',id)
+      this.$modal.show('detail')
     }
   }
 }
