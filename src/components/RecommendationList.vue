@@ -11,17 +11,15 @@
     </slick>
     <p v-else-if="keyword">沒有符合搜尋條件的結果</p>
     <clip-loader color="#4a4a4a" size="24px" v-else></clip-loader>
-    <app-detail />
   </div>
 </template>
 
 <script>
 import Slick from 'vue-slick'
 import ClipLoader from 'vue-spinner/src/ClipLoader.vue'
-import AppDetail from '@/components/AppDetail.vue'
 export default {
   name: 'RecommendationList',
-  components: {Slick, ClipLoader, AppDetail},
+  components: {Slick, ClipLoader},
   props: ['apps', 'keyword'],
   data () {
     return {

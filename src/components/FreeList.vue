@@ -29,18 +29,16 @@
     </div>
     <p v-else-if="keyword">沒有符合搜尋條件的結果</p>
     <clip-loader color="#4a4a4a" size="24px" v-else></clip-loader>
-    <app-detail />
   </div>
 </template>
 
 <script>
 import ClipLoader from 'vue-spinner/src/ClipLoader.vue'
 import vSelect from 'vue-select'
-import AppDetail from '@/components/AppDetail.vue'
 export default {
   name: 'FreeList',
   props: ['apps', 'keyword'],
-  components: {ClipLoader, vSelect, AppDetail},
+  components: {ClipLoader, vSelect},
   data () {
     return {
       page: 1,

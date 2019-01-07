@@ -13,6 +13,7 @@ import AOS from 'aos'
 import InfiniteLoading from 'vue-infinite-loading'
 import VueScrollTo from 'vue-scrollto'
 import VModal from 'vue-js-modal'
+import StarRating from 'vue-star-rating'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -27,6 +28,8 @@ Vue.use(Slick)
 Vue.use(InfiniteLoading)
 Vue.use(VueScrollTo)
 Vue.use(VModal)
+Vue.use(require('vue-moment'))
+Vue.component('star-rating', StarRating)
 
 // Styles
 require('./styles/app.scss')

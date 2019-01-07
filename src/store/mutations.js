@@ -39,16 +39,18 @@ export const clearTopGrossingList = (state) => {
 export const setAppDetail = (state, item) => {
   state.app = {
     'id': item.trackId,
-    'name': item.trackName,
     'icon': item.artworkUrl512,
-    'author': item.artistName,
     'url': item.trackViewUrl,
+    'name': item.trackName,
+    'author': item.artistName,
     'price': item.formattedPrice,
+    'rating': item.averageUserRating || 0,
+    'rating_count': item.userRatingCount || 0,
     'advisory': item.contentAdvisoryRating,
+    'images': item.screenshotUrls,
     'desc': item.description,
     'category': item.genres[0],
-    'images': item.screenshotUrls,
-    'rating': item.averageUserRating || 0,
+    'version': item.version,
     'release_date': item.currentVersionReleaseDate
   }
 }

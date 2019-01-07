@@ -7,6 +7,7 @@
       <hr/>
       <!-- <p>count: {{filterFreeApps.length}}</p> -->
       <free-list :apps="filterFreeApps" :keyword="keyword"></free-list>
+      <app-detail />
     </div>
   </div>
 </template>
@@ -15,9 +16,10 @@
 import Search from '@/components/Search.vue'
 import FreeList from '@/components/FreeList.vue'
 import RecommendationList from '@/components/RecommendationList.vue'
+import AppDetail from '@/components/AppDetail.vue'
 export default {
   name: 'Home',
-  components: {Search, FreeList, RecommendationList},
+  components: {Search, FreeList, RecommendationList, AppDetail},
   data () {
     return {
       keyword: null

@@ -43,6 +43,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: $primary-color;
 }
+.background{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-top: 60%;
+}
 
 //Search Bar
 .search{
@@ -187,6 +193,73 @@ body {
     }
     .infinite-loading-container{
       margin: 0 auto;
+    }
+  }
+}
+
+//App Detail
+.app-detail{
+  .close-button{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 24px;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  .content{
+    .icon{
+      width: 100%;
+      border-radius: 20px;
+    }
+    .name{
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+    .author{
+      color: $category-color;
+    }
+    .price{
+      background-color: #007bff;
+      border-radius: 20px;
+      height: 34px;
+      padding: 5px 0;
+      width: 130px;
+      margin-left: 15px;
+      p{
+        color: white;
+      }
+    }
+    .attr{
+      font-size: 1.1rem;
+    }
+    .caption{
+      font-size: 0.8rem;
+      color: $category-color;
+    }
+    .advisory{
+      margin-top: 5px;
+    }
+    .images{
+      .slick-slider{
+        .slick-slide{
+          padding: 0 10px;
+          margin-left: -10px;
+          img{
+            width: 100%;
+            max-height: 700px;
+            border: .5px solid rgba(0,0,0,.3);
+            border-radius: 10px;
+          }
+        }
+      }
+    }
+    .desc{
+      word-wrap: break-word;
+    }
+    .label{
+      color: $category-color;
     }
   }
 }
