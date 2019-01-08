@@ -3,7 +3,7 @@
     <div class="row justify-content-between align-items-center mb-3 mr-0">
       <h4 class="col-auto">免費</h4>
       <!-- <b-form-select class="col-auto mb-3" v-model="sort" :options="sort_options"/> -->
-      <v-select v-model="sort" :options="sort_options" :clearable="false"></v-select>
+      <v-select v-model="sort" :options="sort_options" :clearable="false" :searchable="false"></v-select>
     </div>
     <div class="row" v-if="sortedApps.length>0" >
       <div class="app-item col-12 col-md-6 col-lg-4 my-2" v-for="(item,index) in list" :key="'free-'+index" :id="'free-'+index"
