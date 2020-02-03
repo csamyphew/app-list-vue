@@ -8,12 +8,12 @@
       <div class="container content" v-if="Object.keys(app).length!=0">
         <div class="row">
           <div class="d-none d-md-block col-md-3">
-            <img class="icon" :src="app.icon" />
+            <img class="icon" :src="app.icon" alt="app icon"/>
           </div>
           <div class="row col-12 col-md-9 pr-0">
             <div class="row mb-2 mx-0">
               <div class="col-5 d-md-none pr-0">
-                <img class="icon" :src="app.icon" />
+                <img class="icon" :src="app.icon" alt="app icon"/>
               </div>
               <div class="row col-7 col-md-12 justify-content-between pr-0">
                 <div class="row col-12 col-md-8 pr-0">
@@ -44,7 +44,7 @@
           <h5>螢幕截圖</h5>
           <slick class="col-12 px-0" :options="slickOptions" >
             <div v-for="(item,index) in app.images" :key="'g-img'+index">
-              <img :src="item" />
+              <img :src="item" :alt="'screenshot '+index"/>
             </div>
           </slick> 
         </div>

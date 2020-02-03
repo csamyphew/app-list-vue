@@ -12,7 +12,7 @@
         <div class="row align-items-center">
           <p class="rank col-2 p-4 px-sm-0 mb-0">{{item.rank}}</p>
           <div class="col-3 pl-0 px-md-0">
-            <img class="icon" :src="item.icon" @click="openDetail(item.id)"/>
+            <img class="icon" :src="item.icon" @click="openDetail(item.id)" alt="app icon"/>
           </div>
           <div class="col-7 row">
             <p class="name col-12 mb-1" @click="openDetail(item.id)">{{item.name}}</p>

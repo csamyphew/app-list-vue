@@ -4,7 +4,7 @@
     <slick class="col-12 brand-slider px-0" v-if="apps.length>0" ref="slick" :options="slickOptions">
       <div class="app-item" v-for="(item,index) in apps" :key="'recomm-'+index" :id="'recomm-'+index"
            data-aos="fade-up" :data-aos-delay="100*index" data-aos-duration="500" :data-aos-anchor="'#recomm-'+index+1" data-aos-anchor-placement="top-center">
-        <img class="icon mb-2" :src="item.icon" @click="openDetail(item.id)"/>
+        <img class="icon mb-2" :src="item.icon" @click="openDetail(item.id)" alt="app icon"/>
         <p class="name mb-0" @click="openDetail(item.id)">{{item.name}}</p>
         <p class="category">{{item.category}}</p>
       </div>
