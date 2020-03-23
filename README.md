@@ -1,19 +1,21 @@
-## Beat Cors Server
-This project is an example of how to set up a proxy server to help frontends running in the browser beat the same origin policy.
+# app-list-vue
 
-The idea is to use express middleware to apply `res.header('Access-Control-Allow-Origin', '*');` around requests to another server, with a more strict CORS setting.
+> A Vue.js project
 
-That way, a server-to-server request could be completed, where the browser's same-origin policy would block it.
+## Build Setup
 
-See the original article for a full walkthrough: [https://medium.com/@dtkatz/3-ways-to-fix-the-cors-error-and-how-access-control-allow-origin-works-d97d55946d9z](https://medium.com/@dtkatz/3-ways-to-fix-the-cors-error-and-how-access-control-allow-origin-works-d97d55946d9)
+``` bash
+# install dependencies
+npm install
 
-### Run the server
+# serve with hot reload at localhost:3000
+npm run dev
+
+# build for production with minification
+npm run build
+
+# build for production and view the bundle analyzer report
+npm run build --report
 ```
-npm i
-npm run start
-```
 
-Then visit `localhost:3000/jokes/random`.
-
-#### Enjoy!
-
+For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
