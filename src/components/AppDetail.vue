@@ -11,7 +11,7 @@
             <img class="icon" :src="app.icon" alt="app icon"/>
           </div>
           <div class="row col-12 col-md-9 pr-0">
-            <div class="row mb-2 mx-0">
+            <div class="col-12 mb-2 mx-0">
               <div class="col-5 d-md-none pr-0">
                 <img class="icon" :src="app.icon" alt="app icon"/>
               </div>
